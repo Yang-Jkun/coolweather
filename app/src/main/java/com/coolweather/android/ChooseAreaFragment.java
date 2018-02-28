@@ -1,5 +1,6 @@
 package com.coolweather.android;
 
+import android.annotation.SuppressLint;
 import android.app.Fragment;
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -77,6 +78,7 @@ public class ChooseAreaFragment extends Fragment{
 	 * */
 	private int currentLevel;
 
+	@SuppressLint("NewApi")
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
 		View view=inflater.inflate(R.layout.choose_area, container,false);
@@ -238,6 +240,7 @@ public class ChooseAreaFragment extends Fragment{
 			public void onFailure(Call call,IOException e){
 				//通过runOnUiThread()方法回到主线程处理逻辑
 				getActivity().runOnUiThread(new Runnable() {
+					@SuppressLint("NewApi")
 					@Override
 					public void run() {
 						closeProgressDialog();
